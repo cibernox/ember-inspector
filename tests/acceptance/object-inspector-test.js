@@ -379,8 +379,7 @@ test("Read only CPs cannot be edited", async function (assert) {
   await click('.js-object-property-value');
   assert.notOk(find('.js-object-property-value-txt'));
 
-  let valueElements = findAll('.js-object-property-value');
-  await click(valueElements[valueElements.length - 1]);
+  await click(findAll('.js-object-property-value').pop());
 
   assert.ok(find('.js-object-property-value-txt'));
 });

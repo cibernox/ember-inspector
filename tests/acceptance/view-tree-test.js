@@ -196,8 +196,7 @@ test("It should update the view tree when the port triggers a change", async fun
 
   treeNodes = findAll('.js-view-tree-item');
   assert.equal(treeNodes.length, 3);
-  let viewControllersEls = findAll('.js-view-controller');
-  assert.equal(viewControllersEls[viewControllersEls.length - 1].textContent.trim(), 'App.CommentsController');
+  assert.equal(findAll('.js-view-controller').pop().textContent.trim(), 'App.CommentsController');
 
   viewTree = defaultViewTree();
   viewTree.children.splice(0, 1);
@@ -206,8 +205,7 @@ test("It should update the view tree when the port triggers a change", async fun
   await wait();
   treeNodes = findAll('.js-view-tree-item');
   assert.equal(treeNodes.length, 2);
-  viewControllersEls = findAll('.js-view-controller');
-  assert.equal(viewControllersEls[viewControllersEls.length - 1].textContent.trim(), 'App.SomeController');
+  assert.equal(findAll('.js-view-controller').pop().textContent.trim(), 'App.SomeController');
 });
 
 test("Previewing / showing a view on the client", async function(assert) {

@@ -148,8 +148,7 @@ test("Records are successfully listed and bound", async function t(assert) {
     records: [recordFactory({ objectId: 'new-post', id: 3, title: 'Modified Post', body: 'I am no longer new' })]
   });
 
-  let rows = findAll('.js-record-list-item');
-  row = rows[rows.length - 1];
+  row = findAll('.js-record-list-item').pop();
   assert.equal(findAll('.js-record-column', row)[0].textContent.trim(), 3);
   assert.equal(findAll('.js-record-column', row)[1].textContent.trim(), 'Modified Post');
   assert.equal(findAll('.js-record-column', row)[2].textContent.trim(), 'I am no longer new');
@@ -161,8 +160,7 @@ test("Records are successfully listed and bound", async function t(assert) {
   await wait();
 
   assert.equal(findAll('.js-record-list-item').length, 2);
-  rows = findAll('.js-record-list-item');
-  let lastRow = rows[rows.length - 1];
+  let lastRow = findAll('.js-record-list-item').pop();
   assert.equal(findAll('.js-record-column', lastRow)[0].textContent.trim(), 2, "Records successfully removed.");
 });
 
@@ -211,9 +209,7 @@ test("Searching records", async function t(assert) {
 
 test("Columns successfully updated when switching model types", async function t(assert) {
   await visit('/data/model-types/App.Post/records');
-  let columns = findAll('.js-header-column');
-  assert.equal(columns[columns.length - 1].textContent.trim(), 'Body');
+  assert.equal(findAll('.js-header-column').pop().textContent.trim(), 'Body');
   await visit('/data/model-types/App.Comment/records');
-  columns = findAll('.js-header-column');
-  assert.equal(columns[columns.length - 1].textContent.trim(), 'Content');
+  assert.equal(findAll('.js-header-column').pop().textContent.trim(), 'Content');
 });
