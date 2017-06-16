@@ -3,7 +3,7 @@ import { module, test } from 'qunit';
 import computed from 'ember-new-computed';
 import { visit, find, settings as nativeDomHelpersSettings } from 'ember-native-dom-helpers';
 
-let EmberDebug;
+const { default: EmberDebug } = require('ember-debug/main');
 let port, name, message;
 let App;
 let objectInspector;
@@ -30,7 +30,6 @@ module("Ember Debug - Object Inspector", {
   // eslint-disable-next-line object-shorthand
   beforeEach: async function() {
     /* globals require */
-    EmberDebug = require('ember-debug/main').default;
     EmberDebug.Port = EmberDebug.Port.extend({
       init() {},
       send(n, m) {

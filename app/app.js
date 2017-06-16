@@ -5,11 +5,12 @@ import config from './config/environment';
 import Port from "./port";
 import PromiseAssembler from "ember-inspector/libs/promise-assembler";
 
-Ember.MODEL_FACTORY_INJECTIONS = true;
+let App;
 
+Ember.MODEL_FACTORY_INJECTIONS = true;
 const version = '{{EMBER_INSPECTOR_VERSION}}';
 
-const App = Ember.Application.extend({
+App = Ember.Application.extend({
   modulePrefix: config.modulePrefix,
   podModulePrefix: config.podModulePrefix,
   Resolver

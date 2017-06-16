@@ -1,9 +1,10 @@
+/* globals require */
 import { module, test } from 'qunit';
 import Ember from "ember";
 import { visit } from 'ember-native-dom-helpers';
 
 const { run, A: emberA, Application } = Ember;
-let EmberDebug;
+const { default: EmberDebug } = require('ember-debug/main');
 let port, name, message;
 let App;
 
@@ -19,8 +20,6 @@ function setupApp() {
 
 module("Container Debug", {
   beforeEach() {
-    /* globals require */
-    EmberDebug = require('ember-debug/main').default;
     EmberDebug.Port = EmberDebug.Port.extend({
       init() {},
       send(n, m) {

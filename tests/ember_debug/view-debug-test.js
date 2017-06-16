@@ -5,7 +5,7 @@ import { visit, find, click, triggerEvent, settings as nativeDomHelpersSettings 
 const { Application } = Ember;
 
 /* globals require */
-const EmberDebug = require('ember-debug/main').default;
+const { default: EmberDebug } = require('ember-debug/main');
 const { Route, Object: EmberObject, Handlebars, Controller } = Ember;
 const { compile } = Handlebars;
 let port;

@@ -6,7 +6,7 @@ const { run, Application, Route } = Ember;
 const get = Ember.get;
 
 /* globals require */
-const EmberDebug = require('ember-debug/main').default;
+const { default: EmberDebug } = require('ember-debug/main');
 let port;
 let App;
 

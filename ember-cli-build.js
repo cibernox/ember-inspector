@@ -1,7 +1,10 @@
 /* eslint-env node */
+<<<<<<< HEAD
 /* global require, module */
+=======
+>>>>>>> dee3c39... Save progress
 
-var EmberApp = require('ember-cli/lib/broccoli/ember-app');
+const EmberApp = require('ember-cli/lib/broccoli/ember-app');
 var mergeTrees = require('broccoli-merge-trees');
 var concatFiles = require('broccoli-concat');
 var path = require('path');

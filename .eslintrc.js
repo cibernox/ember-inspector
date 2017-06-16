@@ -115,5 +115,5 @@ module.exports = {
     'prefer-template': 2,
     'require-yield': 2,
     'template-curly-spacing': 2,
-  },
+  }
 };

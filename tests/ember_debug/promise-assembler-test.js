@@ -1,7 +1,7 @@
 import Ember from "ember";
 import { module, test } from 'qunit';
 /*globals require*/
-const PromiseAssembler = require('ember-debug/libs/promise-assembler').default;
+const { default: PromiseAssembler } = require('ember-debug/libs/promise-assembler');
 
 let assembler;
 
